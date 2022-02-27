@@ -63,6 +63,10 @@ namespace GymMembers.ViewModel
                 // Creating member to send to Main VM
                 MessageMember member = new MessageMember(EnteredFName, EnteredLName, EnteredEmail, "Update");
 
+                member.FirstName = EnteredFName;
+                member.LastName = EnteredLName;
+                member.Email = EnteredEmail;
+
                 Messenger.Default.Send(member);
                 window.Close();
             }

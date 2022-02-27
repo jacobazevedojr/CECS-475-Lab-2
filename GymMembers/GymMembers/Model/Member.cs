@@ -127,9 +127,9 @@ namespace GymMembers.Model
         /// Text to be displayed in the list box.
         /// </summary>
         /// <returns>A concatenation of the member's first name, last name, and email.</returns>
-        public string toString()
+        public override string ToString()
         {
-            return firstName + " " + lastName + ": " + email;
+            return firstName + " " + lastName + ", " + email;
         }
     }
 }

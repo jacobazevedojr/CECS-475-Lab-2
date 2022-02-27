@@ -1,7 +1,8 @@
+using CommonServiceLocator;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
-using Microsoft.Practices.ServiceLocation;
 using System;
+using GymMembers.ViewModel;
 
 namespace GymMembers.ViewModel
 {
@@ -18,7 +19,8 @@ namespace GymMembers.ViewModel
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
             SimpleIoc.Default.Register<MainViewModel>();
-            ____________________________________
+            SimpleIoc.Default.Register<AddViewModel>();
+            SimpleIoc.Default.Register<ChangeViewModel>();
         }
 
         /// <summary>
@@ -29,6 +31,25 @@ namespace GymMembers.ViewModel
             get
             {
                 return ServiceLocator.Current.GetInstance<MainViewModel>();
+            }
+        }
+
+        /// <summary>
+        /// A property that lets the add view window connect with its View Model.
+        /// </summary>
+        public AddViewModel AddViewModel
+        {
+            get { return ServiceLocator.Current.GetInstance<AddViewModel>(); }
+        }
+
+        /// <summary>
+        /// A property that lets the change view window connect with its View Model.
+        /// </summary>
+        public ChangeViewModel ChangeViewModel
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<ChangeViewModel>();
             }
         }
 

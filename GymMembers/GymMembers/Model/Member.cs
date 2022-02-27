@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 namespace GymMembers.Model
 {
     /// <summary>
@@ -15,16 +16,24 @@ namespace GymMembers.Model
         /// The member's first name.
         /// </summary>
         private string firstName;
+
         /// <summary>
         /// The member's last name.
         /// </summary>
         private string lastName;
+
         /// <summary>
         /// The member's email.
         /// </summary>
         private string email;
 
+        /// <summary>
+        /// Limit to text field
+        /// </summary>
+        private int TEXT_LIMIT = 25;
+
         public Member() { }
+
         /// <summary>
         /// Creates a new member.
         /// </summary>
@@ -49,7 +58,6 @@ namespace GymMembers.Model
                 return firstName;
             }
             set
-2
             {
                 if (value.Length > TEXT_LIMIT)
                 {
@@ -74,7 +82,6 @@ namespace GymMembers.Model
                 return lastName;
             }
             set
-2
             {
                 if (value.Length > TEXT_LIMIT)
                 {
@@ -89,8 +96,7 @@ namespace GymMembers.Model
         }
 
         /// <summary>
-        /// A property that gets or sets the member's e-mail, and makes sure it's not too
-            long.
+        /// A property that gets or sets the member's e-mail, and makes sure it's not too long.
         /// </summary>
         /// <returns>The member's e-mail.</returns>
         public string Email

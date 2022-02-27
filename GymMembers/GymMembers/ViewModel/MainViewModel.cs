@@ -36,12 +36,12 @@ namespace GymMembers.ViewModel
         /// </summary>
         public MainViewModel()
         {
-            members =
-            database =
+            members = new ObservableCollection<Member>();
+            database = new MemberDB(members);
             members = database.GetMemberships();
-            AddCommand =
-            ExitCommand =
-            ChangeCommand =
+            AddCommand = new RelayCommand(AddMethod);
+            ExitCommand = new RelayCommand<IClosable>(ExitMethod);
+            ChangeCommand = new RelayCommand(ChangeMethod);
             Messenger.Default.Register<MessageMember>(this, ReceiveMember);
             Messenger.Default.Register<NotificationMessage>(this, ReceiveMessage);
         }
@@ -50,6 +50,16 @@ namespace GymMembers.ViewModel
         /// The command that triggers adding a new member.
         /// </summary>
         public ICommand AddCommand { get; private set; }
+
+        /// <summary>
+        /// The command that triggers exiting a window
+        /// </summary>
+        public RelayCommand<IClosable> ExitCommand { get; private set; }
+
+        /// <summary>
+        /// The command that triggers changing member.
+        /// </summary>
+        public ICommand ChangeCommand { get; private set; }
 
         /// <summary>
         /// The currently selected member in the list box.
@@ -97,7 +107,7 @@ namespace GymMembers.ViewModel
             {
                 ChangeWindow change = new ChangeWindow();
                 change.Show();
-                Messenger.Default.Send(__________________________);
+                Messenger.Default.Send(SelectedMember);
             }
         }
 
@@ -110,13 +120,14 @@ namespace GymMembers.ViewModel
         {
             if (m.Message == "Update")
             {
-                _____________________________________
-            database.SaveMemberships();
+                int i = members.IndexOf(selectedMember);
+                members[i] = new Member(m.FirstName, m.LastName, m.Email);
+                database.SaveMemberships();
             }
             else if (m.Message == "Add")
             {
-                ______________________________________
-            database.SaveMemberships();
+                MemberList.Add(new Member(m.FirstName, m.LastName, m.Email));
+                database.SaveMemberships();
             }
         }
 
@@ -128,8 +139,8 @@ namespace GymMembers.ViewModel
         {
             if (msg.Notification == "Delete")
             {
-                _______________________________________________
-            database.SaveMemberships();
+                members.Remove(selectedMember);
+                database.SaveMemberships();
             }
         }
 

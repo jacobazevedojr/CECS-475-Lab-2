@@ -70,20 +70,42 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+	<Compile Include="ViewModel\IClosable.cs" />
+	<Compile Include="ViewModel\AddViewModel.cs" />
+	<Compile Include="ViewModel\ChangeViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
-    <Page Include="MainWindow.xaml">
+	<Compile Include="Model\Member.cs" />
+	<Compile Include="Model\MemberDB.cs" />
+	<Compile Include="Model\MessageMember.cs" />
+    <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+	<Page Include="View\AddWindow.xaml">
+		<Generator>MSBuild:Compile</Generator>
+		<SubType>Designer</SubType>
+	</Page>
+	<Page Include="View\ChangeWindow.xaml">
+		<Generator>MSBuild:Compile</Generator>
+		<SubType>Designer</SubType>
+	</Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+	<Compile Include="View\AddWindow.xaml.cs">
+		<DependentUpon>AddWindow.xaml</DependentUpon>
+		<SubType>Code</SubType>
+	</Compile>
+	<Compile Include="View\ChangeWindow.xaml.cs">
+		<DependentUpon>ChangeWindow.xaml</DependentUpon>
+		<SubType>Code</SubType>
+	</Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

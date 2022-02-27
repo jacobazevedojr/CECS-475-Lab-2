@@ -4,15 +4,15 @@
 winexe
 C#
 .cs
-C:\Users\jacob\Documents\GitHub\CECS-475-Lab-2\GymMembers\GymMembers\obj\Debug\
+C:\Users\jacob\Documents\GitHub\CECS-475-Lab-2\GymMembers\GymMembers\obj\Release\
 GymMembers
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\jacob\Documents\GitHub\CECS-475-Lab-2\GymMembers\GymMembers\App.xaml
 3-1345474967
 
-16318518381
+15-1894360297
 1221692103543
 View\MainWindow.xaml;View\AddWindow.xaml;View\ChangeWindow.xaml;
 

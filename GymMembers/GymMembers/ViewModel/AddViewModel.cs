@@ -37,7 +37,7 @@ namespace GymMembers.ViewModel
         {
             SaveCommand = new RelayCommand<IClosable>(SaveMethod);
             CancelCommand = new RelayCommand<IClosable>(CancelMethod);
- }
+        }
         /// <summary>
         /// The command that triggers saving the filled out member data.
         /// </summary>
@@ -59,14 +59,9 @@ namespace GymMembers.ViewModel
                 if (window != null)
                 {
                     // Creating member to send to Main VM
-                    Member member = new Member();
+                    MessageMember member = new MessageMember(EnteredFName, EnteredLName, EnteredEmail, "Add");
 
-                    // Validation occurs below (where exceptions are caught)
-                    member.FirstName = enteredFName;
-                    member.LastName = enteredLName;
-                    member.Email = enteredEmail;
-
-                    Messenger.Default.Send(Member));
+                    Messenger.Default.Send(member);
                     window.Close();
                 }
             }

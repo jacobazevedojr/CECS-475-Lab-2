@@ -29,14 +29,17 @@ namespace GymMembers.ViewModel
         /// The currently entered email in the change window.
         /// </summary>
         private string enteredEmail;
-14
+
         /// <summary>
         /// Initializes a new instance of the ChangeViewModel class.
         /// </summary>
         public ChangeViewModel()
         {
-            _____________________________________
-            Messenger.Default.Register<Member>(this, ___________________ -);
+            UpdateCommand = new RelayCommand<IClosable>(UpdateMethod);
+            DeleteCommand = new RelayCommand<IClosable>(DeleteMethod);
+
+            // Calls the GetSelected method to populate ViewModel fields
+            Messenger.Default.Register<Member>(this, GetSelected);
         }
 
         /// <summary>
@@ -57,18 +60,21 @@ namespace GymMembers.ViewModel
         {
             try
             {
-                Messenger.Default.Send(_________________________________________ -));
+                // Creating member to send to Main VM
+                MessageMember member = new MessageMember(EnteredFName, EnteredLName, EnteredEmail, "Update");
+
+                Messenger.Default.Send(member);
                 window.Close();
             }
             catch (ArgumentException)
             {
                 MessageBox.Show("Fields must be under 25 characters.", "Entry Error");
             }
-            catch (__________________________n)
+            catch (NullReferenceException)
             {
                 MessageBox.Show("Fields cannot be empty.", "Entry Error");
             }
-            catch (______________________n)
+            catch (FormatException)
             {
                 MessageBox.Show("Must be a valid e-mail address.", "Entry Error");
             }
@@ -82,21 +88,24 @@ namespace GymMembers.ViewModel
         {
             if (window != null)
             {
-                Messenger.Default.Send(______________________________________--));
+                Messenger.Default.Send(new NotificationMessage("Delete"));
                 window.Close();
             }
         }
+
         /// <summary>
         /// Receives a member from the main VM to auto-fill the change box with the currently selected member.
         /// </summary>
         /// <param name="m">The member data to fill in.</param>
         public void GetSelected(Member m)
         {
-            ___________________________
+            EnteredFName = m.FirstName;
+            EnteredLName = m.LastName;
+            EnteredEmail = m.Email;
         }
 
         /// <summary>
-        /// The currently entered first name in the change window.
+        /// The currently entered first name in the add window.
         /// </summary>
         public string EnteredFName
         {
@@ -111,5 +120,36 @@ namespace GymMembers.ViewModel
             }
         }
 
+        /// <summary>
+        /// The currently entered last name in the add window.
+        /// </summary>
+        public string EnteredLName
+        {
+            get
+            {
+                return enteredLName;
+            }
+            set
+            {
+                enteredLName = value;
+                RaisePropertyChanged("EnteredLName");
+            }
+        }
+
+        /// <summary>
+        /// The currently entered email in the add window.
+        /// </summary>
+        public string EnteredEmail
+        {
+            get
+            {
+                return enteredEmail;
+            }
+            set
+            {
+                enteredEmail = value;
+                RaisePropertyChanged("EnteredEmail");
+            }
+        }
     }
 }

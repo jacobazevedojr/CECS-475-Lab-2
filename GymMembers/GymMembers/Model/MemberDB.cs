@@ -41,8 +41,15 @@ namespace GymMembers.Model
         {
             try
             {
-                StreamReader input = new StreamReader(new FileStream(filepath,
-                FileMode.OpenOrCreate, FileAccess.Read));
+                StreamReader input = new StreamReader(new FileStream(filepath, FileMode.OpenOrCreate, FileAccess.Read));
+
+                // Convert input into a list of members
+                while (input.Peek() != -1)
+                {
+                    // Since members are stored w/ their fields separated by " " we can extract as below
+                    string[] splitLine = input.ReadLine().Split(' ');
+                    members.Add(new Member(splitLine[0], splitLine[1], splitLine[2]));
+                }
                 input.Close();
             }
             catch (FileNotFoundException)
@@ -62,6 +69,11 @@ namespace GymMembers.Model
         public void SaveMemberships()
         {
             StreamWriter output = new StreamWriter(new FileStream(filepath, FileMode.Create, FileAccess.Write));
+
+            foreach (Member m in members)
+            {
+                output.WriteLine(m.FirstName + " " + m.LastName + " " + m.Email);
+            }
 
             output.Close();
         }

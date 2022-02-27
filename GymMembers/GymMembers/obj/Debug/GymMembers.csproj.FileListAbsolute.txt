@@ -1,0 +1,16 @@
+C:\Users\jacob\Documents\GitHub\CECS-475-Lab-2\GymMembers\GymMembers\bin\Debug\GymMembers.exe.config
+C:\Users\jacob\Documents\GitHub\CECS-475-Lab-2\GymMembers\GymMembers\bin\Debug\GymMembers.exe
+C:\Users\jacob\Documents\GitHub\CECS-475-Lab-2\GymMembers\GymMembers\bin\Debug\GymMembers.pdb
+C:\Users\jacob\Documents\GitHub\CECS-475-Lab-2\GymMembers\GymMembers\obj\Debug\GymMembers.csproj.AssemblyReference.cache
+C:\Users\jacob\Documents\GitHub\CECS-475-Lab-2\GymMembers\GymMembers\obj\Debug\GymMembers.csproj.SuggestedBindingRedirects.cache
+C:\Users\jacob\Documents\GitHub\CECS-475-Lab-2\GymMembers\GymMembers\obj\Debug\MainWindow.g.cs
+C:\Users\jacob\Documents\GitHub\CECS-475-Lab-2\GymMembers\GymMembers\obj\Debug\App.g.cs
+C:\Users\jacob\Documents\GitHub\CECS-475-Lab-2\GymMembers\GymMembers\obj\Debug\GymMembers_MarkupCompile.cache
+C:\Users\jacob\Documents\GitHub\CECS-475-Lab-2\GymMembers\GymMembers\obj\Debug\GymMembers_MarkupCompile.lref
+C:\Users\jacob\Documents\GitHub\CECS-475-Lab-2\GymMembers\GymMembers\obj\Debug\MainWindow.baml
+C:\Users\jacob\Documents\GitHub\CECS-475-Lab-2\GymMembers\GymMembers\obj\Debug\GymMembers.g.resources
+C:\Users\jacob\Documents\GitHub\CECS-475-Lab-2\GymMembers\GymMembers\obj\Debug\GymMembers.Properties.Resources.resources
+C:\Users\jacob\Documents\GitHub\CECS-475-Lab-2\GymMembers\GymMembers\obj\Debug\GymMembers.csproj.GenerateResource.cache
+C:\Users\jacob\Documents\GitHub\CECS-475-Lab-2\GymMembers\GymMembers\obj\Debug\GymMembers.csproj.CoreCompileInputs.cache
+C:\Users\jacob\Documents\GitHub\CECS-475-Lab-2\GymMembers\GymMembers\obj\Debug\GymMembers.exe
+C:\Users\jacob\Documents\GitHub\CECS-475-Lab-2\GymMembers\GymMembers\obj\Debug\GymMembers.pdb

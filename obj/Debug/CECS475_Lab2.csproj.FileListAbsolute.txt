@@ -1,7 +1,0 @@
-C:\Users\jacob\Documents\GitHub\CECS-475-Lab-2\obj\Debug\CECS475_Lab2.csproj.AssemblyReference.cache
-C:\Users\jacob\Documents\GitHub\CECS-475-Lab-2\obj\Debug\CECS475_Lab2.csproj.SuggestedBindingRedirects.cache
-C:\Users\jacob\Documents\GitHub\CECS-475-Lab-2\obj\Debug\MainWindow.g.cs
-C:\Users\jacob\Documents\GitHub\CECS-475-Lab-2\obj\Debug\App.g.cs
-C:\Users\jacob\Documents\GitHub\CECS-475-Lab-2\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\jacob\Documents\GitHub\CECS-475-Lab-2\obj\Debug\CECS475_Lab2_MarkupCompile.cache
-C:\Users\jacob\Documents\GitHub\CECS-475-Lab-2\obj\Debug\CECS475_Lab2_MarkupCompile.lref
